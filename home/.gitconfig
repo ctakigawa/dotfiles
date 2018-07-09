@@ -1,0 +1,62 @@
+[user]
+    name = Akinori Takigawa
+    email = akinori.takigawa@gmail.com
+
+[core]
+    excludesfile = ~/.gitignore
+    editor = /usr/local/bin/vim
+
+[push]
+    default = simple
+
+[alias]
+    ci = commit
+    co = checkout
+    st = status -sb
+    br = branch
+    bra = branch -a
+    brv = branch -v
+    brvv = branch -vv
+    pullr = pull --recurse-submodules
+    praise = blame
+    difflog = log -p HEAD@{3.days.ago}
+    oneline = log --pretty=oneline --decorate
+    filenames = log --name-only
+    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
+    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+    diffs = diff --staged
+    l = log --stat
+    lg = log --graph -n 20 --pretty=format:'%C(yellow)%h %C(green)(%ar)%C(reset) %s %C(white)- %an%C(cyan)%d%C(reset)'
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+#[color "branch"]
+#    current = yellow reverse
+#    local = yellow
+#    remote = green
+#
+#[color "diff"]
+#    meta = yellow bold
+#    frag = magenta bold
+#    old = red bold
+#    new = green bold
+#
+#[color "status"]
+#    added = yellow
+#    changed = green
+#    untracked = cyan
+
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B
+
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
+
+[interactive]
+    diffFilter = diff-highlight

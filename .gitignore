@@ -1,0 +1,9 @@
+.netrwhist
+home/.vim/tmp/*
+home/.vim/.dein/*
+home/.vim/.cache/*
+home/.vim/repos/*
+home/.vim/rollbacks/*
+home/.vim/merged
+home/.vim/temp/*
+!.gitkeep
