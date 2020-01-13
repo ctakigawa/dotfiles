@@ -46,6 +46,7 @@ PATH=$PATH:$HOME/go/bin
 
 export GOPATH
 export PATH
+export LANG=en_US.UTF-8
 
 if [ -e $(which pyenv) ]; then
     eval "$(pyenv init -)"
@@ -53,3 +54,12 @@ fi
 if [ -e $(which python) ]; then
     export PYTHONSTARTUP="${HOME}/.pythonstartup.py"
 fi
+
+if [ -e $(which rbenv) ]; then
+    export PATH="${HOME}/.rbenv/bin:${PATH}"
+    eval "$(rbenv init -)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
